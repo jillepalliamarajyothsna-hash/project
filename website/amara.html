@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AmaraStyle | Fashion Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f8f9ff;
+color:#333;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(90deg,#6c63ff,#9d4edd,#ff6b9a);
+padding:18px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:white;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:#ffe066;
+}
+
+/* BANNER */
+
+.banner{
+height:550px;
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.banner h1{
+font-size:70px;
+margin-bottom:15px;
+}
+
+.banner p{
+font-size:24px;
+}
+
+.btn{
+background:linear-gradient(45deg,#ff6b9a,#6c63ff);
+color:white;
+border:none;
+padding:12px 24px;
+border-radius:30px;
+cursor:pointer;
+font-size:15px;
+font-weight:600;
+margin-top:10px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* OFFER */
+
+.offer{
+background:linear-gradient(90deg,#ffd166,#ff9f1c);
+padding:18px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+color:#5a189a;
+}
+
+/* SEARCH */
+
+.search-bar{
+text-align:center;
+padding:40px;
+}
+
+.search-bar input{
+width:65%;
+padding:16px;
+border:none;
+border-radius:50px;
+font-size:16px;
+outline:none;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* SECTION */
+
+section{
+padding:70px 50px;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+font-size:42px;
+color:#6c63ff;
+}
+
+/* GRID */
+
+.categories,
+.products,
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+/* CARD */
+
+.card{
+background:white;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card-content h3{
+margin-bottom:10px;
+color:#6c63ff;
+}
+
+.price{
+color:#ff4d6d;
+font-size:24px;
+font-weight:bold;
+margin:12px 0;
+}
+
+/* PROFILE */
+
+.profile,
+.cart-box,
+.payment,
+.about{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.profile{
+display:flex;
+gap:35px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.profile img{
+width:280px;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+border:5px solid #9d4edd;
+}
+
+/* FORM */
+
+input,
+select{
+width:100%;
+padding:14px;
+margin-top:12px;
+border-radius:12px;
+border:1px solid #ccc;
+outline:none;
+}
+
+/* REVIEWS */
+
+.rating{
+color:orange;
+font-size:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#6c63ff;
+color:white;
+text-align:center;
+padding:30px;
+font-size:18px;
+margin-top:40px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.banner h1{
+font-size:42px;
+}
+
+.banner p{
+font-size:18px;
+}
+
+.search-bar input{
+width:95%;
+}
+
+.profile{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">AmaraStyle</div>
+
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#profile">My Profile</a></li>
+<li><a href="#cart">Cart</a></li>
+<li><a href="#order">Place Order</a></li>
+<li><a href="#reviews">Feedback</a></li>
+</ul>
+</nav>
+
+</header>
+
+<!-- HOME -->
+
+<section class="banner" id="home">
+
+<div>
+
+<h1>Fashion Meets Elegance</h1>
+
+<p>Discover Trendy & Modest Fashion</p>
+
+<button class="btn">Shop Now</button>
+
+</div>
+
+</section>
+
+<!-- OFFER -->
+
+<div class="offer">
+🎉 Flat 25% OFF on First Order | Free Delivery
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="Search dresses, shoes, fashion..." onkeyup="searchProducts()">
+</div>
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+<h2>Fashion Categories</h2>
+
+<div class="categories">
+
+<!-- WOMEN -->
+
+<div class="card" onclick="showCategory('women')" style="cursor:pointer;">
+
+<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Womenswear</h3>
+<p>Elegant modest outfits</p>
+</div>
+
+</div>
+
+<!-- KIDS -->
+
+<div class="card" onclick="showCategory('kids')" style="cursor:pointer;">
+
+<img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?q=80&w=1000&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Kidswear</h3>
+<p>Cute comfortable outfits</p>
+</div>
+
+</div>
+
+<!-- FOOTWEAR -->
+
+<div class="card" onclick="showCategory('footwear')" style="cursor:pointer;">
+
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Footwear</h3>
+<p>Sneakers, sandals & shoes</p>
+</div>
+
+</div>
+
+<!-- MEN -->
+
+<div class="card" onclick="showCategory('mens')" style="cursor:pointer;">
+
+<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format&fit=crop">
+
+<div class="card-content">
+<h3>Menswear</h3>
+<p>Classic stylish outfits</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="categoryProducts">
+
+<h2>Products</h2>
+
+<div class="products" id="dynamicProducts"></div>
+
+</section>
+
+<!-- PROFILE -->
+
+<section id="profile">
+
+<h2>My Profile</h2>
+
+<div class="profile">
+
+<img src="myphoto.png">
+
+<div>
+
+<h1 style="color:#6c63ff;">J. Jyothsna</h1>
+
+<p style="margin-top:10px;">AmaraStyle University Project</p>
+
+<br>
+
+<p><b>Email:</b> jillepalliamarajyothsna@g,mail.com</p>
+
+<p><b>Wishlist:</b> 12 Products</p>
+
+<p><b>Orders:</b> 8 Completed</p>
+
+<p><b>Saved Address:</b> Ahmedabad, India</p>
+
+<br>
+
+<button class="btn">Edit Profile</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CART -->
+
+<section id="cart">
+
+<h2>🛒 My Cart</h2>
+
+<div class="cart-box">
+
+<ul id="cartItems"></ul>
+
+<h3 style="margin-top:20px;">
+Total: ₹<span id="total">0</span>
+</h3>
+
+</div>
+
+</section>
+
+<!-- ORDER -->
+
+<section id="order">
+
+<h2>Place Your Order</h2>
+
+<div class="payment">
+
+<input type="text" placeholder="Full Name">
+
+<input type="text" placeholder="Phone Number">
+
+<input type="text" placeholder="Delivery Address">
+
+<select>
+
+<option>Select Payment Method</option>
+
+<option>UPI</option>
+
+<option>Card</option>
+
+<option>Cash On Delivery</option>
+
+</select>
+
+<button class="btn" style="width:100%;">
+Place Order
+</button>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section>
+
+<h2>About AmaraStyle</h2>
+
+<div class="about">
+
+<p>
+AmaraStyle offers trendy, stylish and modest fashion collections with elegant modern designs for everyone.
+</p>
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="reviews">
+
+<div class="card">
+<div class="card-content">
+<h3>Priya Sharma</h3>
+<p><b>Place:</b> Ahmedabad</p>
+<p class="rating">★★★★★</p>
+<p>Beautiful collections and fast delivery.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Sana Khan</h3>
+<p><b>Place:</b> Hyderabad</p>
+<p class="rating">★★★★☆</p>
+<p>Loved the elegant outfits and shoes.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Anjali Patel</h3>
+<p><b>Place:</b> Surat</p>
+<p class="rating">★★★★★</p>
+<p>Very aesthetic website and quality products.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-content">
+<h3>Meher Fatima</h3>
+<p><b>Place:</b> Mumbai</p>
+<p class="rating">★★★★★</p>
+<p>Wonderful modest fashion collections.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 AmaraStyle | Designed By J. Jyothsna
+</footer>
+
+<script>
+
+let total = 0;
+
+const categoryData = {
+
+/* ================= WOMENSWEAR ================= */
+
+women: `
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Floral Maxi Dress</h3>
+<p class='price'>₹2299</p>
+<button class='btn' onclick="addToCart('Floral Maxi Dress',2299)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Anarkali Gown</h3>
+<p class='price'>₹2699</p>
+<button class='btn' onclick="addToCart('Anarkali Gown',2699)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Cotton Kurti Set</h3>
+<p class='price'>₹1799</p>
+<button class='btn' onclick="addToCart('Cotton Kurti Set',1799)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Silk Saree</h3>
+<p class='price'>₹3299</p>
+<button class='btn' onclick="addToCart('Silk Saree',3299)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Long Casual Dress</h3>
+<p class='price'>₹1899</p>
+<button class='btn' onclick="addToCart('Long Casual Dress',1899)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Printed Straight Kurti</h3>
+<p class='price'>₹1599</p>
+<button class='btn' onclick="addToCart('Printed Straight Kurti',1599)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Festival Saree</h3>
+<p class='price'>₹3599</p>
+<button class='btn' onclick="addToCart('Festival Saree',3599)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Western Long Dress</h3>
+<p class='price'>₹2499</p>
+<button class='btn' onclick="addToCart('Western Long Dress',2499)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Embroidered Kurti</h3>
+<p class='price'>₹1899</p>
+<button class='btn' onclick="addToCart('Embroidered Kurti',1899)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Party Wear Gown</h3>
+<p class='price'>₹2799</p>
+<button class='btn' onclick="addToCart('Party Wear Gown',2799)">Add to Cart</button>
+</div>
+</div>
+
+`,
+
+/* ================= KIDSWEAR ================= */
+
+kids: `
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Party Dress</h3>
+<p class='price'>₹999</p>
+<button class='btn' onclick="addToCart('Kids Party Dress',999)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Casual Outfit</h3>
+<p class='price'>₹1099</p>
+<button class='btn' onclick="addToCart('Kids Casual Outfit',1099)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Traditional Wear</h3>
+<p class='price'>₹1399</p>
+<button class='btn' onclick="addToCart('Kids Traditional Wear',1399)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Kurta Set</h3>
+<p class='price'>₹1499</p>
+<button class='btn' onclick="addToCart('Kids Kurta Set',1499)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Ethnic Wear</h3>
+<p class='price'>₹1599</p>
+<button class='btn' onclick="addToCart('Kids Ethnic Wear',1599)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1516257984-b1b4d707412e?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Traditional Kids Dress</h3>
+<p class='price'>₹1699</p>
+<button class='btn' onclick="addToCart('Traditional Kids Dress',1699)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Summer Outfit</h3>
+<p class='price'>₹999</p>
+<button class='btn' onclick="addToCart('Kids Summer Outfit',999)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1503919545889-aef636e10ad4?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Hoodie Set</h3>
+<p class='price'>₹1399</p>
+<button class='btn' onclick="addToCart('Kids Hoodie Set',1399)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Denim Outfit</h3>
+<p class='price'>₹1499</p>
+<button class='btn' onclick="addToCart('Kids Denim Outfit',1499)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Kids Winter Outfit</h3>
+<p class='price'>₹1599</p>
+<button class='btn' onclick="addToCart('Kids Winter Outfit',1599)">Add to Cart</button>
+</div>
+</div>
+
+`,
+
+/* ================= FOOTWEAR ================= */
+
+footwear: `
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Running Sneakers</h3>
+<p class='price'>₹2499</p>
+<button class='btn' onclick="addToCart('Running Sneakers',2499)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>White Sneakers</h3>
+<p class='price'>₹1799</p>
+<button class='btn' onclick="addToCart('White Sneakers',1799)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1605348532760-6753d2c43329?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Sports Shoes</h3>
+<p class='price'>₹2899</p>
+<button class='btn' onclick="addToCart('Sports Shoes',2899)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1514996937319-344454492b37?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Women Heels</h3>
+<p class='price'>₹2299</p>
+<button class='btn' onclick="addToCart('Women Heels',2299)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1460353581641-37baddab0fa2?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Classic Sandals</h3>
+<p class='price'>₹1299</p>
+<button class='btn' onclick="addToCart('Classic Sandals',1299)">Add to Cart</button>
+</div>
+</div>
+
+`,
+
+/* ================= MENSWEAR ================= */
+
+mens: `
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Classic Blazer</h3>
+<p class='price'>₹2899</p>
+<button class='btn' onclick="addToCart('Classic Blazer',2899)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Casual Shirt</h3>
+<p class='price'>₹1499</p>
+<button class='btn' onclick="addToCart('Casual Shirt',1499)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Formal Shirt</h3>
+<p class='price'>₹1799</p>
+<button class='btn' onclick="addToCart('Formal Shirt',1799)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Ethnic Kurta</h3>
+<p class='price'>₹1999</p>
+<button class='btn' onclick="addToCart('Ethnic Kurta',1999)">Add to Cart</button>
+</div>
+</div>
+
+<div class='card'>
+<img src='https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1000&auto=format&fit=crop'>
+<div class='card-content'>
+<h3>Oversized Hoodie</h3>
+<p class='price'>₹1599</p>
+<button class='btn' onclick="addToCart('Oversized Hoodie',1599)">Add to Cart</button>
+</div>
+</div>
+
+`
+
+};
+
+function showCategory(category){
+
+document.getElementById('dynamicProducts').innerHTML =
+categoryData[category];
+
+document.getElementById('categoryProducts')
+.scrollIntoView({behavior:'smooth'});
+
+}
+
+function addToCart(product,price){
+
+const cartItems =
+document.getElementById('cartItems');
+
+const li = document.createElement('li');
+
+li.innerHTML =
+`🛍️ ${product} - ₹${price}
+<button class='btn'
+onclick="removeItem(this,${price})">
+Remove
+</button>`;
+
+cartItems.appendChild(li);
+
+total += price;
+
+document.getElementById('total').innerText = total;
+
+}
+
+function removeItem(button,price){
+
+button.parentElement.remove();
+
+total -= price;
+
+document.getElementById('total').innerText = total;
+
+}
+
+function searchProducts(){
+
+let input =
+document.getElementById('searchInput')
+.value.toLowerCase();
+
+let products =
+document.querySelectorAll('.card');
+
+products.forEach(product=>{
+
+let text =
+product.innerText.toLowerCase();
+
+if(text.includes(input)){
+product.style.display='block';
+}
+else{
+product.style.display='none';
+}
+
+});
+
+}
+
+</script>
+</body>
+</html>
